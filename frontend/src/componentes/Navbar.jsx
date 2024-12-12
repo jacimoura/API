@@ -5,7 +5,7 @@ import { SunIcon, MoonIcon } from '@chakra-ui/icons'
 
 const Navbar = () => {
   const {colorMode, toggleColorMode} = useColorMode();
-  return <Container maxW={"1140px"} px={4}>
+  return (<Container maxW={"1140px"} px={4}>
     <Flex 
       h={16}
       alignItems={"center"}
@@ -31,14 +31,15 @@ const Navbar = () => {
             <FaCalendarPlus fontSize={20} />
           </Button>
         </Link>
-        <Link to={"/create"}>
+        
           <Button onClick={toggleColorMode}>
             {colorMode === "light" ? <MoonIcon fontSize={20} /> : <SunIcon fontSize={20} />}
           </Button>
-        </Link>
+        
       </HStack>
     </Flex>
   </Container>
-}
+  );
+};
 
 export default Navbar
